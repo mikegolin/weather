@@ -2,12 +2,23 @@ $(function() {
   var handleWeatherResponse = function(data) {
     console.log(data);
 
-    // Put your code here to change the "markup" variable. 
+    // Put your code here to change the "markup" variable.
     // Don't change any other code in this file. You will be sad.
-    
-    var markup = "The weather report... " + "will be here when I finish my homework.";
-    
-    
+
+
+
+//    if (data.currently.precipProbability = 0) {
+    var markup = "In " + data.timezone + " the current temperature is " + data.currently.temperature +
+    " degF but if feels like " + data.currently.apparentTemperature + ". Today was a " +
+    data.currently.summary + " day. There is a " + data.currently.precipProbability*100 + "% chance of precipitation.";
+//  } else {
+//    var markup = "In " + data.timezone + " the current temperature is " + data.currently.temperature +
+//    " degF but if feels like " + data.currently.apparentTemperature + ". Today was a " +
+//    data.currently.summary + " day. There is a " + data.currently.precipProbability*100 + "% chance of " + data.currently.precipType + ".";
+//  };
+
+
+
     // End of your code
 
     $('.weather-report').html(markup);
